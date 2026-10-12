@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Tasty</string>
+    <string name="home_subtitle">Відкривайте смачні рецепти з усього світу</string>
+    <string name="home_domain_badge">Лабораторна REST API • dummyjson.com/recipes</string>
+
+    <!-- Onboarding Actions -->
+    <string name="onboarding_skip">Пропустити</string>
+    <string name="onboarding_next">Далі</string>
+    <string name="onboarding_get_started">Розпочати</string>
+
+    <!-- Onboarding Slides -->
+    <string name="onboarding_title_1">Відкривайте найкращі рецепти</string>
+    <string name="onboarding_desc_1">Досліджуйте сотні перевірених страв світової кухні з покроковими інструкціями та часом приготування.</string>
+    <string name="onboarding_title_2">Фільтруйте за типом страви та кухнею</string>
+    <string name="onboarding_desc_2">Швидко знаходьте сніданки, обіди, вечері або десерти відповідно до ваших уподобань і тегів.</string>
+    <string name="onboarding_title_3">Інгредієнти та харчова цінність</string>
+    <string name="onboarding_desc_3">Перевіряйте точні списки інгредієнтів, кількість порцій, калорійність та складність перед початком готування.</string>
+    <string name="onboarding_title_4">Зберігайте улюблені страви</string>
+    <string name="onboarding_desc_4">Тримайте улюблені рецепти та персональні налаштування під рукою на всіх ваших пристроях.</string>
+
+    <!-- Settings & Home Controls -->
+    <string name="settings_section_title">Налаштування</string>
+    <string name="settings_language_label">Мова</string>
+    <string name="settings_language_system">Системна</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_uk">Українська</string>
+    <string name="settings_theme_label">Тема оформлення</string>
+    <string name="settings_theme_system">Системна</string>
+    <string name="settings_theme_light">Світла</string>
+    <string name="settings_theme_dark">Темна</string>
+    <string name="home_reset_onboarding">Скинути онбординг</string>
+</resources>

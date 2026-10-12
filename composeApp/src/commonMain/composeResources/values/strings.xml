@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Tasty</string>
+    <string name="home_subtitle">Discover delicious recipes from around the world</string>
+    <string name="home_domain_badge">REST API Lab • dummyjson.com/recipes</string>
+
+    <!-- Onboarding Actions -->
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_get_started">Get Started</string>
+
+    <!-- Onboarding Slides -->
+    <string name="onboarding_title_1">Discover World-Class Recipes</string>
+    <string name="onboarding_desc_1">Explore hundreds of curated dishes from global cuisines with step-by-step instructions and prep times.</string>
+    <string name="onboarding_title_2">Filter by Meal &amp; Cuisine</string>
+    <string name="onboarding_desc_2">Quickly find breakfast, lunch, dinner, or dessert recipes tailored to your taste and dietary tags.</string>
+    <string name="onboarding_title_3">Smart Ingredients &amp; Nutrition</string>
+    <string name="onboarding_desc_3">Check exact ingredient lists, serving sizes, calorie counts, and difficulty ratings before you start cooking.</string>
+    <string name="onboarding_title_4">Save Your Culinary Favorites</string>
+    <string name="onboarding_desc_4">Keep your favorite recipes and personal preferences synced across all your devices.</string>
+
+    <!-- Settings & Home Controls -->
+    <string name="settings_section_title">Preferences</string>
+    <string name="settings_language_label">Language</string>
+    <string name="settings_language_system">System</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_uk">Українська</string>
+    <string name="settings_theme_label">Theme Mode</string>
+    <string name="settings_theme_system">System</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="home_reset_onboarding">Reset Onboarding</string>
+</resources>
