@@ -1,107 +1,85 @@
-# Tasty — Kotlin Multiplatform Recipes App (Lab 1)
+# Tasty — додаток рецептів на Kotlin Multiplatform (Лабораторна робота №4)
 
-**Tasty** is a Kotlin Multiplatform (KMP) application built with **Compose Multiplatform** targeting **Android**, **iOS**, and **Desktop (JVM)**. This repository contains the foundation for a full REST API client in the **Recipes** domain.
-
----
-
-## Domain & Target API
-
-- **Domain**: Culinary Recipes (`RECIPES`)
-- **REST API Endpoint**: [`https://dummyjson.com/recipes`](https://dummyjson.com/recipes)
-- **Current Scope**: Project architecture, Material 3 custom theming, custom Google Fonts typography, structured logging with **Kermit**, persistent preferences with **multiplatform-settings**, a 4-slide **HorizontalPager** onboarding flow, and runtime **English / Ukrainian** localization. *(Networking will be added in the next lab).*
+**Tasty** — це мультиплатформний клієнтський додаток, розроблений за допомогою технологій **Kotlin Multiplatform** та **Compose Multiplatform** для платформ **Android**, **iOS** та **Desktop (JVM)**. Проєкт є основою майбутнього повноцінного REST API клієнта для пошуку, перегляду та збереження кулінарних рецептів.
 
 ---
 
-## Implemented Lab Items
+## Предметна область та API
 
-1. **Kotlin Multiplatform & Compose Multiplatform Setup (`com.example.tasty`)**
-   - Single shared `:composeApp` module targeting Android, iOS (`iosX64`, `iosArm64`, `iosSimulatorArm64`), and Desktop (`jvm("desktop")`).
-   - Managed via a Gradle Version Catalog (`gradle/libs.versions.toml`).
-2. **Custom Material 3 Theme (`ui/theme`)**
-   - **Color Palette (`Color.kt`)**:
-     - Primary: `#E8590C` | Secondary: `#2F6B3F`
-     - Light Background: `#FFF8F1` | Dark Background: `#1C1410`
-     - Light Surface: `#FFFFFF` | Dark Surface: `#261C16`
-     - OnBackground (Light): `#2B2118`
-   - **Typography (`Type.kt`)**: Bundled Google Fonts `.ttf` files in `composeResources/font` — **Poppins** (`Regular`, `SemiBold`, `Bold`) for display/headline/title styles and **Inter** (`Regular`, `Medium`, `SemiBold`) for body/label styles.
-   - **Shapes (`Shape.kt`)**: `16.dp` rounded corners for medium/large Material 3 shapes.
-   - **Theme (`Theme.kt`)**: `AppTheme` supporting `"system"`, `"light"`, and `"dark"` modes.
-3. **Logging & Persistent User Preferences**
-   - **Kermit (`util/logging/AppLogger.kt`)**: Shared Koin-free logger (`co.touchlab:kermit`) logging application startup state, onboarding slide navigation/actions, and user preference mutations.
-   - **Multiplatform Settings (`data/settings/UserPreferences.kt`)**: Backed by `com.russhwolf:multiplatform-settings` and `multiplatform-settings-no-arg`, persisting:
-     - `onboardingCompleted: Boolean`
-     - `language: String` (`"system"` / `"uk"` / `"en"`)
-     - `themeMode: String` (`"system"` / `"light"` / `"dark"`)
-4. **Onboarding Screen & ViewModel (`ui/onboarding`, `ui/home`)**
-   - 4-slide `HorizontalPager` with Material icons, animated indicator dots, **Skip** button, and **Next** button that transitions to **Get Started** on the final slide (`animateScrollToPage` via coroutine scope).
-   - State managed by `OnboardingViewModel` (`androidx.lifecycle.ViewModel`).
-   - Conditional start destination: displays `OnboardingScreen` on first launch and transitions to `HomeScreen` once completed. `HomeScreen` includes language & theme switchers and a **Reset Onboarding** button.
-5. **Multiplatform Localization (`composeResources/values` & `values-uk`)**
-   - All user-visible strings externalized in XML resources (`strings.xml`).
-   - Runtime locale switching persisted in `UserPreferences` and applied via `expect`/`actual` (`LocaleManager.kt`).
+- **Предметна область**: кулінарні рецепти (`RECIPES`).
+- **Цільовий REST API**: [`https://dummyjson.com/recipes`](https://dummyjson.com/recipes).
+- **Поточний обсяг реалізації**: у цій лабораторній роботі реалізовано архітектуру проєкту, кастомну тему оформлення Material 3, шрифти, логування, збереження налаштувань користувача, екран онбордингу та локалізацію інтерфейсу (мережевий шар буде додано в наступних лабораторних роботах).
 
 ---
 
-## Localization
+## Реалізовані пункти лабораторної
 
-All user-facing text is stored in Compose Multiplatform resources:
-- **English (Default)**: `composeApp/src/commonMain/composeResources/values/strings.xml`
-- **Ukrainian (`uk`)**: `composeApp/src/commonMain/composeResources/values-uk/strings.xml`
-
-### Runtime Language Switching (`expect` / `actual`)
-When the user selects `"system"`, `"en"`, or `"uk"` on the Home screen:
-1. `UserPreferences` persists the selection via `multiplatform-settings` and logs the change via `AppLogger`.
-2. Platform-specific `applyPlatformLanguage(languageCode)` and `@Composable ProvideAppLocale(languageCode)` update the active locale immediately without requiring an app restart:
-   - **Android (`LocaleManager.android.kt`)**: Updates `Locale.setDefault(...)`, calls `AppCompatDelegate.setApplicationLocales(...)`, and provides a localized `Configuration` and `Context` via `CompositionLocalProvider(LocalConfiguration, LocalContext)`.
-   - **iOS (`LocaleManager.ios.kt`)**: Updates `NSUserDefaults.standardUserDefaults` (`AppleLanguages` key) and triggers recomposition of Compose resources via `key(languageCode)`.
-   - **Desktop (`LocaleManager.desktop.kt`)**: Updates `Locale.setDefault(...)` and triggers recomposition via `key(languageCode)`.
+1. **Проєкт на Kotlin Multiplatform та Compose Multiplatform**: створено єдиний спільний модуль `:composeApp` (пакет `com.example.tasty`) із підтримкою таргетів Android, iOS та Desktop. Конфігурацію залежностей і плагінів організовано через каталог версій [`gradle/libs.versions.toml`](gradle/libs.versions.toml) та скрипт збірки [`composeApp/build.gradle.kts`](composeApp/build.gradle.kts).
+2. **Кастомна тема Material 3**: налаштовано світлу й темну палітри кольорів (`#E8590C`, `#2F6B3F`, `#FFF8F1`, `#1C1410`, `#FFFFFF`, `#261C16`, `#2B2118`), шрифти **Poppins** (заголовки) та **Inter** (основний текст) із локальних файлів у `composeApp/src/commonMain/composeResources/font/`, а також форми із заокругленням `16.dp`. Файли теми розташовані в [`Color.kt`](composeApp/src/commonMain/kotlin/com/example/tasty/ui/theme/Color.kt), [`Type.kt`](composeApp/src/commonMain/kotlin/com/example/tasty/ui/theme/Type.kt), [`Shape.kt`](composeApp/src/commonMain/kotlin/com/example/tasty/ui/theme/Shape.kt) та [`Theme.kt`](composeApp/src/commonMain/kotlin/com/example/tasty/ui/theme/Theme.kt).
+3. **Логування подій через Kermit**: створено спільний об'єкт логування без використання сторонніх DI-фреймворків, який записує запуск додатка, навігацію по слайдах онбордингу та зміни призначених для користувача налаштувань. Реалізація міститься у файлі [`composeApp/src/commonMain/kotlin/com/example/tasty/util/logging/AppLogger.kt`](composeApp/src/commonMain/kotlin/com/example/tasty/util/logging/AppLogger.kt).
+4. **Збереження налаштувань через multiplatform-settings**: реалізовано клас `UserPreferences`, який зберігає прапорець проходження онбордингу (`onboardingCompleted`), обрану мову інтерфейсу (`language`: `"system"`, `"uk"`, `"en"`) та режим теми (`themeMode`: `"system"`, `"light"`, `"dark"`). Код збереження налаштувань розташований у [`composeApp/src/commonMain/kotlin/com/example/tasty/data/settings/UserPreferences.kt`](composeApp/src/commonMain/kotlin/com/example/tasty/data/settings/UserPreferences.kt).
+5. **Екран онбордингу на основі HorizontalPager**: реалізовано 4 слайди з іконками, заголовками, описами, анімованими індикаторами сторінок, кнопкою пропуску та кнопкою переходу далі з плавною анімацією прокручування через `ViewModel`. Код розміщено у файлах [`OnboardingPage.kt`](composeApp/src/commonMain/kotlin/com/example/tasty/ui/onboarding/OnboardingPage.kt), [`OnboardingViewModel.kt`](composeApp/src/commonMain/kotlin/com/example/tasty/ui/onboarding/OnboardingViewModel.kt), [`OnboardingScreen.kt`](composeApp/src/commonMain/kotlin/com/example/tasty/ui/onboarding/OnboardingScreen.kt) та [`HomeScreen.kt`](composeApp/src/commonMain/kotlin/com/example/tasty/ui/home/HomeScreen.kt).
+6. **Локалізація інтерфейсу (uk/en)**: усі текстові рядки винесено в мультиплатформні ресурси, а перемикання між системною, українською та англійською мовами відбувається миттєво під час роботи додатка. Ресурси та менеджер локалі містяться у [`values/strings.xml`](composeApp/src/commonMain/composeResources/values/strings.xml), [`values-uk/strings.xml`](composeApp/src/commonMain/composeResources/values-uk/strings.xml) та [`LocaleManager.kt`](composeApp/src/commonMain/kotlin/com/example/tasty/data/settings/LocaleManager.kt).
 
 ---
 
-## Design
+## Використані бібліотеки
 
-**Designed with Google Stitch** — full design system specifications are available in [`docs/design/DESIGN.md`](docs/design/DESIGN.md) (Light theme) and [`docs/design/design-dark.md`](docs/design/design-dark.md) (Dark theme), along with exported HTML prototypes in [`docs/design/html/`](docs/design/html/).
+- **Kermit (`co.touchlab:kermit`)**: використовується для мультиплатформного логування життєвого циклу додатка, дій користувача під час онбордингу та змін налаштувань у спільній кодовій базі `commonMain`.
+- **multiplatform-settings (`com.russhwolf:multiplatform-settings` та `multiplatform-settings-no-arg`)**: використовується для постійного збереження налаштувань користувача (статусу онбордингу, обраної мови та теми оформлення) у нативному сховищі кожної платформи (`SharedPreferences`, `NSUserDefaults`, `java.util.prefs.Preferences`).
 
-- **Color Palette**:
-  - **Primary**: `#E8590C` (Roasted Citrus / Terracotta Orange)
-  - **Secondary**: `#2F6B3F` (Botanical Herb Green)
-  - **Light Theme**: Background `#FFF8F1`, Surface `#FFFFFF`, OnBackground `#2B2118`
-  - **Dark Theme**: Background `#1C1410`, Surface `#261C16`, OnBackground `#F5ECE4`
-- **Typography**: **Poppins** (`Regular`, `SemiBold`, `Bold`) for headings/titles and **Inter** (`Regular`, `Medium`, `SemiBold`) for body copy and labels.
-- **Shapes**: `16dp` (`1rem`) rounded corners for cards, inputs, and primary surfaces.
+---
 
-### UI Screenshots (Light & Dark Themes)
+## Локалізація
 
-| Screen | Light Theme | Dark Theme |
+Усі видимі для користувача текстові рядки зберігаються в ресурсах **Compose Multiplatform**:
+- **Англійська мова (за замовчуванням)**: [`composeApp/src/commonMain/composeResources/values/strings.xml`](composeApp/src/commonMain/composeResources/values/strings.xml).
+- **Українська мова (`uk`)**: [`composeApp/src/commonMain/composeResources/values-uk/strings.xml`](composeApp/src/commonMain/composeResources/values-uk/strings.xml).
+
+Перемикання мови в рантаймі реалізовано за допомогою механізму `expect`/`actual` у файлі [`LocaleManager.kt`](composeApp/src/commonMain/kotlin/com/example/tasty/data/settings/LocaleManager.kt) (`applyPlatformLanguage` та `@Composable ProvideAppLocale`):
+- **Android** ([`LocaleManager.android.kt`](composeApp/src/androidMain/kotlin/com/example/tasty/data/settings/LocaleManager.android.kt)): оновлює `Locale.setDefault(...)`, викликає `AppCompatDelegate.setApplicationLocales(...)` та передає локалізований контекст через `CompositionLocalProvider(LocalConfiguration, LocalContext)`.
+- **iOS** ([`LocaleManager.ios.kt`](composeApp/src/iosMain/kotlin/com/example/tasty/data/settings/LocaleManager.ios.kt)): записує обраний код мови до ключа `AppleLanguages` у `NSUserDefaults.standardUserDefaults` та ініціює рекомпозицію інтерфейсу через `key(languageCode)`.
+- **Desktop** ([`LocaleManager.desktop.kt`](composeApp/src/desktopMain/kotlin/com/example/tasty/data/settings/LocaleManager.desktop.kt)): встановлює обрану локаль через `Locale.setDefault(...)` та оновлює стан дерева композиції за допомогою `key(languageCode)`.
+
+---
+
+## Дизайн
+
+Дизайн інтерфейсу створено в **Google Stitch**. Повна специфікація дизайн-системи описана у файлах [`docs/design/DESIGN.md`](docs/design/DESIGN.md) (світлий варіант) та [`docs/design/design-dark.md`](docs/design/design-dark.md) (темний варіант), а експортовані HTML-макети збережено в директорії [`docs/design/html/`](docs/design/html/).
+
+- **Кольорова палітра**:
+  - **Основний колір (`primary`)**: `#E8590C` (насичений теракотово-помаранчевий).
+  - **Додатковий колір (`secondary`)**: `#2F6B3F` (трав'яний темно-зелений).
+  - **Світла тема**: фон `#FFF8F1`, поверхня `#FFFFFF`, текст на фоні `#2B2118`.
+  - **Темна тема**: фон `#1C1410`, поверхня `#261C16`, світлий текст на темному фоні `#F5ECE4`.
+- **Шрифти**: **Poppins** (`Regular`, `SemiBold`, `Bold`) для заголовків і акцентів та **Inter** (`Regular`, `Medium`, `SemiBold`) для основного тексту, списків інгредієнтів і підписів.
+
+---
+
+## Скриншоти інтерфейсу
+
+| Екран | Світла тема | Темна тема |
 | :--- | :---: | :---: |
-| **Onboarding** | ![Onboarding Light](docs/design/screenshots/onboarding-light.png) | ![Onboarding Dark](docs/design/screenshots/onboarding-dark.png) |
-| **Home (Recipes Feed)** | ![Home Light](docs/design/screenshots/home-light.png) | ![Home Dark](docs/design/screenshots/home-dark.png) |
-| **Recipe Details** | ![Recipe Details Light](docs/design/screenshots/details-light.png) | ![Recipe Details Dark](docs/design/screenshots/details-dark.png) |
-| **Settings & Preferences** | ![Settings Light](docs/design/screenshots/settings-light.png) | ![Settings Dark](docs/design/screenshots/settings-dark.png) |
+| **Онбординг** | ![Onboarding, світла тема](docs/design/screenshots/onboarding-light.png) | ![Onboarding, темна тема](docs/design/screenshots/onboarding-dark.png) |
+| **Головний екран** | ![Головний екран, світла тема](docs/design/screenshots/home-light.png) | ![Головний екран, темна тема](docs/design/screenshots/home-dark.png) |
+| **Деталі рецепта** | ![Деталі рецепта, світла тема](docs/design/screenshots/details-light.png) | ![Деталі рецепта, темна тема](docs/design/screenshots/details-dark.png) |
+| **Налаштування** | ![Налаштування, світла тема](docs/design/screenshots/settings-light.png) | ![Налаштування, темна тема](docs/design/screenshots/settings-dark.png) |
 
 ---
 
-## How to Build & Run
+## Збірка та запуск
 
 ### 1. Android
-Build the debug APK from the terminal:
+Щоб зібрати відлагоджувальний APK-файл, виконайте команду:
 ```bash
 ./gradlew :composeApp:assembleDebug
 ```
-The generated APK will be located at `composeApp/build/outputs/apk/debug/composeApp-debug.apk`.
-To install and launch on a connected device or emulator:
-```bash
-./gradlew :composeApp:installDebug
-```
 
 ### 2. Desktop (JVM)
-Run the Desktop application directly via Gradle:
+Щоб запустити десктопну версію додатка, виконайте команду:
 ```bash
 ./gradlew :composeApp:run
 ```
 
-### 3. iOS (macOS with Xcode)
-Open the `iosApp` directory in Xcode or build the Kotlin framework via Gradle:
-```bash
-./gradlew :composeApp:assembleXCFramework
-```
+### 3. iOS
+Відкрийте `iosApp` у Xcode і запустіть на симуляторі (потрібен macOS).
