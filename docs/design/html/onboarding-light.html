@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-fixed": "#d4e3ff", "error": "#ba1a1a", "primary-fixed-dim": "#ffb598", "surface-variant": "#f2dfd1", "on-tertiary-container": "#fdfcff", "on-primary-fixed": "#370e00", "tertiary": "#005da8", "on-tertiary": "#ffffff", "on-secondary-container": "#347044", "tertiary-container": "#0076d2", "secondary-container": "#b1f2ba", "primary-fixed": "#ffdbce", "outline-variant": "#e2bfb2", "surface-container-highest": "#f2dfd1", "tertiary-fixed-dim": "#a4c9ff", "on-secondary-fixed-variant": "#125128", "on-secondary": "#ffffff", "on-tertiary-fixed": "#001c39", "background": "#fff8f5", "surface-container-lowest": "#ffffff", "secondary": "#2e6a3e", "on-error-container": "#93000a", "error-container": "#ffdad6", "primary-container": "#cb4a00", "on-primary-container": "#fffbff", "on-error": "#ffffff", "inverse-surface": "#392e25", "surface-dim": "#e9d7c8", "primary": "#a23a00", "surface-container-low": "#fff1e8", "on-secondary-fixed": "#00210b", "surface-container": "#feeadc", "on-tertiary-fixed-variant": "#004883", "surface-container-high": "#f8e5d6", "outline": "#8e7166", "on-background": "#231a11", "on-primary": "#ffffff", "inverse-on-surface": "#ffeee1", "on-primary-fixed-variant": "#7f2b00", "secondary-fixed": "#b1f2ba", "surface": "#fff8f5", "inverse-primary": "#ffb598", "secondary-fixed-dim": "#96d5a0", "surface-tint": "#a63b00", "on-surface-variant": "#5a4138", "on-surface": "#231a11", "surface-bright": "#fff8f5" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-xs": "0.25rem", "margin": "1rem", "gutter-tablet": "1.5rem", "space-sm": "0.5rem", "gutter": "1rem", "space-xl": "2rem", "space-md": "1rem", "margin-tablet": "2rem", "margin-desktop": "3rem", "gutter-desktop": "2rem" }, "fontFamily": { "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "title-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "label-md": ["Inter"], "label-lg": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Inter"], "display-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"] }, "fontSize": { "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-sm": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-body-md text-on-surface flex flex-col min-h-screen pt-safe pb-safe"><main class="flex-1 flex flex-col relative w-full bg-background"><div class="flex flex-col w-full px-margin pb-6 max-w-md mx-auto select-none">
+<!-- Top Bar with Brand Badge & Skip Action -->
+<div class="flex items-center justify-between py-space-sm mb-space-xs">
+<div class="flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<span class="font-title-md text-title-md text-primary tracking-tight font-bold">Tasty</span>
+</div>
+<button class="px-3 py-1.5 text-on-surface-variant font-label-lg text-label-lg rounded-full active:bg-surface-container-high transition-colors focus:outline-none" id="skip-btn" type="button">
+      Skip
+    </button>
+</div>
+<!-- Carousel Viewport -->
+<div class="relative w-full overflow-hidden rounded-2xl bg-surface-container-lowest shadow-md p-space-md mb-space-md">
+<div class="flex transition-transform duration-500 ease-out" id="slides-wrapper" style="transform: translateX(0%);">
+<!-- Slide 1: Discover Recipes -->
+<div class="w-full flex-shrink-0 flex flex-col items-center text-center px-1">
+<!-- Visual Container -->
+<div class="relative w-full h-56 rounded-xl bg-surface-container flex items-center justify-center overflow-hidden mb-space-md">
+<div class="absolute -top-10 -right-10 w-36 h-36 bg-primary-fixed rounded-full blur-2xl opacity-60"></div>
+<div class="absolute -bottom-8 -left-8 w-32 h-32 bg-secondary-container rounded-full blur-xl opacity-70"></div>
+<!-- Vector Culinary Scene: Open Recipe Book -->
+<svg class="w-44 h-44 drop-shadow-md relative z-10" fill="none" viewbox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+<!-- Warm book shadow -->
+<ellipse cx="80" cy="130" fill="#231a11" fill-opacity="0.08" rx="55" ry="10"></ellipse>
+<!-- Book Spine Base -->
+<path d="M26 112C36 109 58 108 80 114C102 108 124 109 134 112L138 64C126 60 102 60 80 66C58 60 34 60 22 64L26 112Z" fill="#e2bfb2"></path>
+<!-- Open Left Page -->
+<path d="M24 64C42 59 64 60 80 66V114C64 108 42 108 24 112V64Z" fill="#FFF8F5"></path>
+<!-- Open Right Page -->
+<path d="M80 66C96 60 118 59 136 64V112C118 108 96 108 80 114V66Z" fill="#FFF1E8"></path>
+<!-- Bookmark Ribbon -->
+<path d="M80 66L80 120L85 116L90 120L90 67" fill="#cb4a00"></path>
+<!-- Illustrated Recipe Content lines -->
+<line stroke="#a23a00" stroke-linecap="round" stroke-width="2.5" x1="34" x2="68" y1="74" y2="74"></line>
+<line stroke="#e2bfb2" stroke-linecap="round" stroke-width="2" x1="34" x2="62" y1="82" y2="82"></line>
+<line stroke="#e2bfb2" stroke-linecap="round" stroke-width="2" x1="34" x2="58" y1="89" y2="89"></line>
+<line stroke="#e2bfb2" stroke-linecap="round" stroke-width="2" x1="34" x2="66" y1="96" y2="96"></line>
+<!-- Mini pie chart / dish icon on right page -->
+<circle cx="106" cy="84" fill="#ffdbce" r="14"></circle>
+<circle cx="106" cy="84" fill="#2e6a3e" r="10"></circle>
+<path d="M106 84L113 77A10 10 0 0 1 116 84Z" fill="#ffb598"></path>
+<line stroke="#e2bfb2" stroke-linecap="round" stroke-width="2" x1="94" x2="124" y1="103" y2="103"></line>
+<!-- Floating Basil Leaves -->
+<path d="M128 42C128 42 136 44 138 52C130 54 124 48 128 42Z" fill="#2e6a3e"></path>
+<path d="M130 44C131 48 135 50 135 50" stroke="#96d5a0" stroke-linecap="round" stroke-width="0.8"></path>
+<path d="M22 46C22 46 16 52 18 58C24 58 28 52 22 46Z" fill="#347044"></path>
+<!-- Chili Pepper accent -->
+<path d="M96 36C104 38 106 46 102 52C101 47 98 42 92 41L96 36Z" fill="#ba1a1a"></path>
+<path d="M92 41C90 39 91 36 93 35" stroke="#2e6a3e" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+<span class="absolute top-3 left-3 bg-secondary text-on-secondary px-2.5 py-0.5 rounded-full font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">eco</span> 10,000+ Dishes
+          </span>
+</div>
+<!-- Typography -->
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2 tracking-tight">
+          Discover recipes
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs leading-relaxed">
+          Explore thousands of hand-crafted recipes with intuitive dietary filters and seasonal recommendations.
+        </p>
+</div>
+<!-- Slide 2: Search & Filter -->
+<div class="w-full flex-shrink-0 flex flex-col items-center text-center px-1">
+<!-- Visual Container -->
+<div class="relative w-full h-56 rounded-xl bg-surface-container flex flex-col items-center justify-center overflow-hidden mb-space-md p-3">
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-container-high/60 via-transparent to-primary-fixed/40"></div>
+<!-- Search UI illustration with interactive chips mockup -->
+<div class="relative z-10 w-full max-w-[240px] flex flex-col items-center gap-2.5">
+<!-- Pill Search Input Graphic -->
+<div class="w-full bg-surface-container-lowest shadow-sm rounded-full px-3 py-2 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">search</span>
+<span class="font-label-md text-label-md text-on-surface">Avocado, salmon...</span>
+</div>
+<div class="w-6 h-6 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[14px]">tune</span>
+</div>
+</div>
+<!-- Colorful Dietary Tags -->
+<div class="flex flex-wrap justify-center gap-1.5 w-full pt-1">
+<span class="px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm shadow-sm flex items-center gap-1 animate-pulse">
+<span class="material-symbols-outlined text-[12px]">spa</span> #Vegan
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm shadow-sm">
+                #Under30Mins
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm shadow-sm">
+                #GlutenFree
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">bolt</span> #QuickPrep
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm shadow-sm">
+                #KetoFriendly
+              </span>
+</div>
+<!-- Result Count Badge -->
+<div class="bg-surface-container-low px-3 py-1 rounded-full shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[14px]">auto_awesome</span>
+<span class="font-label-sm text-label-sm text-on-surface">42 pantry matches found</span>
+</div>
+</div>
+</div>
+<!-- Typography -->
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2 tracking-tight">
+          Search & filter
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs leading-relaxed">
+          Quickly find the perfect meal by ingredients in your fridge, preparation time, and dietary tags.
+        </p>
+</div>
+<!-- Slide 3: Cook Step by Step -->
+<div class="w-full flex-shrink-0 flex flex-col items-center text-center px-1">
+<!-- Visual Container -->
+<div class="relative w-full h-56 rounded-xl bg-surface-container flex items-center justify-center overflow-hidden mb-space-md">
+<div class="absolute -top-6 -left-6 w-32 h-32 bg-primary-fixed rounded-full blur-xl opacity-60"></div>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary-fixed rounded-full blur-xl opacity-50"></div>
+<!-- Steaming Pan & Timer Card -->
+<div class="relative z-10 flex flex-col items-center">
+<!-- Culinary Pan Graphic with Steam -->
+<svg class="w-36 h-28 drop-shadow-md" fill="none" viewbox="0 0 140 110" xmlns="http://www.w3.org/2000/svg">
+<!-- Steam Wafts -->
+<path d="M48 28C46 22 52 16 48 10" opacity="0.75" stroke="#cb4a00" stroke-dasharray="2 3" stroke-linecap="round" stroke-width="2"></path>
+<path d="M62 30C60 20 66 14 62 6" opacity="0.9" stroke="#cb4a00" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M76 28C74 22 80 16 76 10" opacity="0.75" stroke="#cb4a00" stroke-dasharray="2 3" stroke-linecap="round" stroke-width="2"></path>
+<!-- Chef Hat Mini Icon floating above pan -->
+<ellipse cx="62" cy="38" fill="#ffffff" rx="8" ry="3"></ellipse>
+<!-- Pan Body -->
+<ellipse cx="62" cy="74" fill="#392e25" rx="42" ry="14"></ellipse>
+<ellipse cx="62" cy="71" fill="#a23a00" rx="40" ry="12"></ellipse>
+<!-- Sizzling Dish Contents -->
+<ellipse cx="62" cy="71" fill="#cb4a00" rx="34" ry="9"></ellipse>
+<circle cx="50" cy="70" fill="#2e6a3e" r="3"></circle>
+<circle cx="68" cy="73" fill="#ffb598" r="2.5"></circle>
+<circle cx="75" cy="69" fill="#b1f2ba" r="3"></circle>
+<circle cx="59" cy="73" fill="#ffffff" r="2"></circle>
+<!-- Pan Rim Highlight -->
+<path d="M22 71C22 78 40 84 62 84C84 84 102 78 102 71" opacity="0.4" stroke="#ffdbce" stroke-linecap="round" stroke-width="1.5"></path>
+<!-- Long Handle -->
+<path d="M102 71L134 65C136 64 138 66 137 68L104 77Z" fill="#392e25"></path>
+<ellipse cx="134" cy="67" fill="#8e7166" rx="2" ry="3.5"></ellipse>
+</svg>
+<!-- Floating Active Step Card -->
+<div class="-mt-4 bg-surface-container-lowest shadow-md rounded-xl px-3.5 py-1.5 flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-on-secondary font-label-sm text-label-sm font-bold">
+                ✓
+              </div>
+<div class="text-left">
+<p class="font-label-sm text-label-sm text-primary font-bold">Step 3 of 5</p>
+<p class="font-body-sm text-body-sm text-on-surface">Simmer for 08:30 mins</p>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px] ml-1">timer</span>
+</div>
+</div>
+</div>
+<!-- Typography -->
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2 tracking-tight">
+          Cook step by step
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs leading-relaxed">
+          Master every dish with interactive timer, step checklist, and clear chef instructions.
+        </p>
+</div>
+<!-- Slide 4: Save your Favorites -->
+<div class="w-full flex-shrink-0 flex flex-col items-center text-center px-1">
+<!-- Visual Container -->
+<div class="relative w-full h-56 rounded-xl bg-surface-container flex items-center justify-center overflow-hidden mb-space-md">
+<div class="absolute inset-0 bg-gradient-to-b from-primary-fixed/30 via-transparent to-secondary-container/40"></div>
+<!-- Glowing Heart Surrounded by Culinary Pins -->
+<div class="relative z-10 flex flex-col items-center justify-center">
+<!-- Decorative orbiting chips -->
+<div class="absolute -top-7 -left-12 bg-surface-container-lowest px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">menu_book</span>
+<span class="font-label-sm text-label-sm text-on-surface">Italian Nights</span>
+</div>
+<div class="absolute -bottom-6 -right-10 bg-surface-container-lowest px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[14px]">bookmark</span>
+<span class="font-label-sm text-label-sm text-on-surface">Healthy Bowls</span>
+</div>
+<!-- Glowing Centerpiece -->
+<div class="relative w-24 h-24 rounded-full bg-primary flex items-center justify-center shadow-lg">
+<div class="absolute inset-0 rounded-full bg-primary animate-ping opacity-25"></div>
+<span class="material-symbols-outlined text-on-primary text-[46px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div class="mt-3 bg-surface-container-lowest/90 px-3 py-1 rounded-full shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Organize custom cookbooks</span>
+</div>
+</div>
+</div>
+<!-- Typography -->
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2 tracking-tight">
+          Save your favorites
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs leading-relaxed">
+          Organize your beloved meals into custom cookbooks and never lose a great taste again.
+        </p>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation & Controls -->
+<div class="flex flex-col items-center gap-space-md w-full pt-1">
+<!-- Active Indicator Dots -->
+<div aria-label="Onboarding Slides" class="flex items-center justify-center gap-2" id="pager-dots" role="tablist">
+<button aria-label="Go to slide 1" class="dot-btn h-2 w-7 rounded-full bg-primary transition-all duration-300 focus:outline-none" data-index="0" type="button"></button>
+<button aria-label="Go to slide 2" class="dot-btn h-2 w-2 rounded-full bg-outline-variant transition-all duration-300 focus:outline-none" data-index="1" type="button"></button>
+<button aria-label="Go to slide 3" class="dot-btn h-2 w-2 rounded-full bg-outline-variant transition-all duration-300 focus:outline-none" data-index="2" type="button"></button>
+<button aria-label="Go to slide 4" class="dot-btn h-2 w-2 rounded-full bg-outline-variant transition-all duration-300 focus:outline-none" data-index="3" type="button"></button>
+</div>
+<!-- Interactive CTA Button -->
+<button class="w-full h-13 py-3.5 px-6 rounded-2xl bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-md active:bg-primary-container transition-all duration-200 focus:outline-none" id="cta-btn" type="button">
+<span id="cta-label">Next</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200" id="cta-icon">arrow_forward</span>
+</button>
+</div>
+</div>
+<script>
+  (function () {
+    const totalSlides = 4;
+    let currentIndex = 0;
+
+    const wrapper = document.getElementById('slides-wrapper');
+    const dots = document.querySelectorAll('.dot-btn');
+    const ctaBtn = document.getElementById('cta-btn');
+    const ctaLabel = document.getElementById('cta-label');
+    const ctaIcon = document.getElementById('cta-icon');
+    const skipBtn = document.getElementById('skip-btn');
+
+    function updatePager(index) {
+      currentIndex = Math.max(0, Math.min(index, totalSlides - 1));
+      
+      // Shift slides
+      if (wrapper) {
+        wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      // Update dots
+      dots.forEach((dot, idx) => {
+        if (idx === currentIndex) {
+          dot.classList.remove('w-2', 'bg-outline-variant');
+          dot.classList.add('w-7', 'bg-primary');
+        } else {
+          dot.classList.remove('w-7', 'bg-primary');
+          dot.classList.add('w-2', 'bg-outline-variant');
+        }
+      });
+
+      // Update button state on final slide
+      if (currentIndex === totalSlides - 1) {
+        ctaLabel.textContent = 'Get Started';
+        ctaIcon.textContent = 'check_circle';
+        if (skipBtn) skipBtn.classList.add('opacity-0', 'pointer-events-none');
+      } else {
+        ctaLabel.textContent = 'Next';
+        ctaIcon.textContent = 'arrow_forward';
+        if (skipBtn) skipBtn.classList.remove('opacity-0', 'pointer-events-none');
+      }
+    }
+
+    // Next / Finish action
+    ctaBtn.addEventListener('click', () => {
+      if (currentIndex < totalSlides - 1) {
+        updatePager(currentIndex + 1);
+      } else {
+        // Subtle micro-feedback on finish
+        ctaBtn.classList.add('scale-95');
+        setTimeout(() => {
+          ctaBtn.classList.remove('scale-95');
+          ctaLabel.textContent = 'Welcome Aboard!';
+          ctaIcon.textContent = 'celebration';
+        }, 150);
+      }
+    });
+
+    // Skip to last slide
+    if (skipBtn) {
+      skipBtn.addEventListener('click', () => {
+        updatePager(totalSlides - 1);
+      });
+    }
+
+    // Dot navigation
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const targetIndex = parseInt(dot.getAttribute('data-index'), 10);
+        updatePager(targetIndex);
+      });
+    });
+
+    // Simple touch swipe gesture support
+    let startX = 0;
+    let endX = 0;
+
+    wrapper.parentElement.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    wrapper.parentElement.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      const diffX = startX - endX;
+      if (Math.abs(diffX) > 40) {
+        if (diffX > 0 && currentIndex < totalSlides - 1) {
+          updatePager(currentIndex + 1);
+        } else if (diffX < 0 && currentIndex > 0) {
+          updatePager(currentIndex - 1);
+        }
+      }
+    }, { passive: true });
+  })();
+</script></main></body></html>

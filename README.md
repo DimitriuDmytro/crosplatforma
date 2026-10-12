@@ -58,13 +58,26 @@ When the user selects `"system"`, `"en"`, or `"uk"` on the Home screen:
 
 ---
 
-## Screenshots
+## Design
 
-| Onboarding (English) | Onboarding (Ukrainian) | Home Screen (Light) | Home Screen (Dark) |
-| :---: | :---: | :---: | :---: |
-| ![Onboarding EN](docs/screenshots/onboarding_en.png) | ![Onboarding UK](docs/screenshots/onboarding_uk.png) | ![Home Light](docs/screenshots/home_light.png) | ![Home Dark](docs/screenshots/home_dark.png) |
+**Designed with Google Stitch** — full design system specifications are available in [`docs/design/DESIGN.md`](docs/design/DESIGN.md) (Light theme) and [`docs/design/design-dark.md`](docs/design/design-dark.md) (Dark theme), along with exported HTML prototypes in [`docs/design/html/`](docs/design/html/).
 
-*(Placeholders for lab report screenshots)*
+- **Color Palette**:
+  - **Primary**: `#E8590C` (Roasted Citrus / Terracotta Orange)
+  - **Secondary**: `#2F6B3F` (Botanical Herb Green)
+  - **Light Theme**: Background `#FFF8F1`, Surface `#FFFFFF`, OnBackground `#2B2118`
+  - **Dark Theme**: Background `#1C1410`, Surface `#261C16`, OnBackground `#F5ECE4`
+- **Typography**: **Poppins** (`Regular`, `SemiBold`, `Bold`) for headings/titles and **Inter** (`Regular`, `Medium`, `SemiBold`) for body copy and labels.
+- **Shapes**: `16dp` (`1rem`) rounded corners for cards, inputs, and primary surfaces.
+
+### UI Screenshots (Light & Dark Themes)
+
+| Screen | Light Theme | Dark Theme |
+| :--- | :---: | :---: |
+| **Onboarding** | ![Onboarding Light](docs/design/screenshots/onboarding-light.png) | ![Onboarding Dark](docs/design/screenshots/onboarding-dark.png) |
+| **Home (Recipes Feed)** | ![Home Light](docs/design/screenshots/home-light.png) | ![Home Dark](docs/design/screenshots/home-dark.png) |
+| **Recipe Details** | ![Recipe Details Light](docs/design/screenshots/details-light.png) | ![Recipe Details Dark](docs/design/screenshots/details-dark.png) |
+| **Settings & Preferences** | ![Settings Light](docs/design/screenshots/settings-light.png) | ![Settings Dark](docs/design/screenshots/settings-dark.png) |
 
 ---
 

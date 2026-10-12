@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-fixed": "#d4e3ff", "error": "#ba1a1a", "primary-fixed-dim": "#ffb598", "surface-variant": "#f2dfd1", "on-tertiary-container": "#fdfcff", "on-primary-fixed": "#370e00", "tertiary": "#005da8", "on-tertiary": "#ffffff", "on-secondary-container": "#347044", "tertiary-container": "#0076d2", "secondary-container": "#b1f2ba", "primary-fixed": "#ffdbce", "outline-variant": "#e2bfb2", "surface-container-highest": "#f2dfd1", "tertiary-fixed-dim": "#a4c9ff", "on-secondary-fixed-variant": "#125128", "on-secondary": "#ffffff", "on-tertiary-fixed": "#001c39", "background": "#fff8f5", "surface-container-lowest": "#ffffff", "secondary": "#2e6a3e", "on-error-container": "#93000a", "error-container": "#ffdad6", "primary-container": "#cb4a00", "on-primary-container": "#fffbff", "on-error": "#ffffff", "inverse-surface": "#392e25", "surface-dim": "#e9d7c8", "primary": "#a23a00", "surface-container-low": "#fff1e8", "on-secondary-fixed": "#00210b", "surface-container": "#feeadc", "on-tertiary-fixed-variant": "#004883", "surface-container-high": "#f8e5d6", "outline": "#8e7166", "on-background": "#231a11", "on-primary": "#ffffff", "inverse-on-surface": "#ffeee1", "on-primary-fixed-variant": "#7f2b00", "secondary-fixed": "#b1f2ba", "surface": "#fff8f5", "inverse-primary": "#ffb598", "secondary-fixed-dim": "#96d5a0", "surface-tint": "#a63b00", "on-surface-variant": "#5a4138", "on-surface": "#231a11", "surface-bright": "#fff8f5" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-xs": "0.25rem", "margin": "1rem", "gutter-tablet": "1.5rem", "space-sm": "0.5rem", "gutter": "1rem", "space-xl": "2rem", "space-md": "1rem", "margin-tablet": "2rem", "margin-desktop": "3rem", "gutter-desktop": "2rem" }, "fontFamily": { "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "title-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "label-md": ["Inter"], "label-lg": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Inter"], "display-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"] }, "fontSize": { "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-sm": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(43,33,24,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go Back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="Tasty Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UrMSTlmdgiXGqREHEH9tkbsl0V_N8x467Tl2grTihpa5e5VaKAPxEm89S7V8wZttcX5R7elFFpWfeZirZAAXuQ3T23P6_tucAB3Z4jXwpMY-wAJVcH_NoJvs4Cdk50HJABgmolJ8eb6ejHoBMmLW3X1YetzXTUkFKiLiweoQ2UVx-ZtRxvpmj3ZGznbgbX3EF22wt_r4QLBJtLVqcQiPiK80LDo0jPu7GUXGZeLhb5Tl8GN7Azd8VufJoJ"/><h1 class="font-title-md text-title-md text-on-surface truncate max-w-[180px]">Recipe Detail</h1></div><div class="flex items-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT1F1PWVsQ1Zn7m4qYD67OqF0JwovlA4DuAJ20zurqDBWsNyUg6tXjia-Mdz4qB4yC7VO6IxkmpHtpQWqz3g9X839Pow8V74_xH9Z9_gYtm2DyuyxGSKtN4tppSuvRuIjWpnqh09CJ7M_T5-QzUbLUJocZs6jUgCHr1wAyQJ05lJa8hLuVIB6Lv-g614z8P0grMYkRfVbQjY7QjpVhtHBQVrTA2GeQCtZ7AV3TPczLkFlZ3BIT2Iiowg"/></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-background"><div class="flex flex-col w-full pb-24">
+<!-- Visual Hero Presentation -->
+<div class="relative w-full h-80 bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Glistening pan-seared golden salmon fillets nestled in rich garlic butter cream sauce with blistered red cherry tomatoes, vibrant green baby spinach, and scattered fresh basil leaves, cooked in a rustic cast-iron skillet bathed in warm ambient kitchen lighting with warm terracotta and sage accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCazlvF6FV86A9NtBp0gIVMjQn3LYBOqq-fn6PcinXkoJfY_AVukquZ9VUAA0zJWgCLz6cCfsYax6FT3VMnK3jp7O-e0VXZkv82xkbn_qYwGjgI2-kqh7i3c-15tdeT2-D5c8QpbVhiEidQZ9d1L5CpxJNtSdHQ6Ns7iK0pIBGATKIm3a64iYiCwgdjmuwx0NGPWruk0Eh81RT3TpcG2819hQLq2gjBSDppog21hHdzXDLvOXnJS1LBag"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/40"></div>
+<!-- Top Floating Actions -->
+<div class="absolute top-4 inset-x-4 flex items-center justify-between pointer-events-auto">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest/85 backdrop-blur-md text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface">Trending Now</span>
+</span>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Share Recipe" class="w-10 h-10 rounded-full bg-surface-container-lowest/85 backdrop-blur-md text-on-surface flex items-center justify-center shadow-sm active:scale-95 transition-transform" id="shareBtn">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button aria-label="Favorite Recipe" class="w-10 h-10 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary flex items-center justify-center shadow-md active:scale-90 transition-transform" id="favoriteBtn">
+<span class="material-symbols-outlined text-[22px]" id="favIcon" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+<!-- Bottom overlay badge on hero -->
+<div class="absolute bottom-3 left-4 flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">eco</span>
+        Gluten-Free Friendly
+      </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface-variant font-label-sm text-label-sm shadow-sm">
+        Keto Option
+      </span>
+</div>
+</div>
+<!-- Recipe Core Details -->
+<div class="px-margin pt-4 flex flex-col gap-5">
+<!-- Title & Chef Header -->
+<div class="flex flex-col gap-2">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface leading-tight">
+        Creamy Tuscan Garlic Butter Salmon
+      </h2>
+<div class="flex items-center justify-between pt-1">
+<!-- Chef Profile -->
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<img class="w-10 h-10 rounded-full object-cover bg-surface-container" data-alt="Smiling female professional culinary chef Sarah Jenkins wearing an apron in a warm naturally lit kitchen workspace, friendly portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW3nAySosMjZ8187_PeJKr_y1uKrPc-PJGQVte7LWgtslFswgz9R2TP9BuUo9dN4ybGwCxKDdO45QxEprIjlV4W22_nmZQrCiIq_rAfoyYMEL_G4irKtauznIT1_DtgnuDwWKEpJJvNLNDHH7OHtRLPI_o-qVyeHKGzLBbllJYSiJkdNw4WsZxgDShNrJDNBvspuQ15aYSEF1h5NicnXcd6aGa6prSt9Vz5XsxInC8PHM52jjiNItY8Q"/>
+<span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-[10px]">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-title-md text-title-md text-on-surface leading-snug">Chef Sarah Jenkins</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Verified Master Chef</span>
+</div>
+</div>
+<!-- Rating Pill -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">4.9</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(1,248)</span>
+</div>
+</div>
+</div>
+<!-- Quick Stats Grid (4 Metric Cards) -->
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Time Pill -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">timer</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Time</span>
+<span class="font-title-md text-title-md text-on-surface font-bold truncate">25 min</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Prep 10m • Cook 15m</span>
+</div>
+</div>
+<!-- Servings Stepper -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Yield</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">restaurant_menu</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<button aria-label="Decrease Servings" class="w-7 h-7 rounded-lg bg-surface-container text-on-surface flex items-center justify-center active:scale-95 transition-transform" id="servingsDec">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="font-title-md text-title-md text-on-surface font-bold" id="servingsDisplay">3 servings</span>
+<button aria-label="Increase Servings" class="w-7 h-7 rounded-lg bg-surface-container text-on-surface flex items-center justify-center active:scale-95 transition-transform" id="servingsInc">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<!-- Calories -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[22px]">bolt</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Nutrition</span>
+<span class="font-title-md text-title-md text-on-surface font-bold truncate">480 kcal</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">38g Protein / serving</span>
+</div>
+</div>
+<!-- Difficulty -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center text-on-secondary-container shrink-0">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Skill Level</span>
+<span class="font-title-md text-title-md text-secondary font-bold truncate">Easy</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Beginner friendly</span>
+</div>
+</div>
+</div>
+<!-- Chef's Pro Tip Callout -->
+<div class="p-3.5 rounded-xl bg-surface-container flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">tips_and_updates</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Chef's Golden Crust Tip</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Pat salmon completely dry with paper towels before seasoning for that ultimate restaurant-grade sear!</p>
+</div>
+</div>
+<!-- Interactive Segmented Tab Bar -->
+<div class="p-1.5 rounded-full bg-surface-container-high flex items-center shadow-inner">
+<button class="flex-1 py-2.5 rounded-full font-label-lg text-label-lg transition-all duration-200 bg-surface-container-lowest text-on-surface shadow-sm font-semibold flex items-center justify-center gap-1.5" id="tabIngredients">
+<span class="material-symbols-outlined text-[18px] text-primary">lunch_dining</span>
+<span>Ingredients</span>
+<span class="ml-1 text-[11px] px-1.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant">8</span>
+</button>
+<button class="flex-1 py-2.5 rounded-full font-label-lg text-label-lg transition-all duration-200 text-on-surface-variant font-medium flex items-center justify-center gap-1.5" id="tabInstructions">
+<span class="material-symbols-outlined text-[18px]">format_list_numbered</span>
+<span>Instructions</span>
+<span class="ml-1 text-[11px] px-1.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant">5</span>
+</button>
+</div>
+<!-- Tab 1: Ingredients View -->
+<div class="flex flex-col gap-3" id="ingredientsSection">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Tap to mark completed</span>
+<button class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-1" id="resetIngredients">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+          Reset list
+        </button>
+</div>
+<div class="flex flex-col gap-2" id="ingredientsList">
+<!-- Item 1 -->
+<label class="ingredient-row flex items-center gap-3.5 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer select-none active:scale-[0.99] transition-all">
+<div class="relative flex items-center justify-center w-6 h-6 rounded-md bg-surface-container checkbox-indicator transition-colors">
+<span class="material-symbols-outlined text-white text-[18px] opacity-0 check-icon">check</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-body-md text-body-md text-on-surface item-text leading-snug">Fresh Atlantic salmon fillets</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant"><span class="qty-calc" data-base="3">3</span> fillets (6 oz each)</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[18px]">drag_indicator</span>
+</label>
+<!-- Item 2 -->
+<label class="ingredient-row flex items-center gap-3.5 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer select-none active:scale-[0.99] transition-all">
+<div class="relative flex items-center justify-center w-6 h-6 rounded-md bg-surface-container checkbox-indicator transition-colors">
+<span class="material-symbols-outlined text-white text-[18px] opacity-0 check-icon">check</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-body-md text-body-md text-on-surface item-text leading-snug">Unsalted butter & olive oil</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant"><span class="qty-calc" data-base="2">2</span> tbsp butter + 1 tbsp extra virgin olive oil</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[18px]">drag_indicator</span>
+</label>
+<!-- Item 3 -->
+<label class="ingredient-row flex items-center gap-3.5 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer select-none active:scale-[0.99] transition-all">
+<div class="relative flex items-center justify-center w-6 h-6 rounded-md bg-surface-container checkbox-indicator transition-colors">
+<span class="material-symbols-outlined text-white text-[18px] opacity-0 check-icon">check</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-body-md text-body-md text-on-surface item-text leading-snug">Garlic cloves</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant"><span class="qty-calc" data-base="4">4</span> cloves, finely minced</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[18px]">drag_indicator</span>
+</label>
+<!-- Item 4 -->
+<label class="ingredient-row flex items-center gap-3.5 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer select-none active:scale-[0.99] transition-all">
+<div class="relative flex items-center justify-center w-6 h-6 rounded-md bg-surface-container checkbox-indicator transition-colors">
+<span class="material-symbols-outlined text-white text-[18px] opacity-0 check-icon">check</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-body-md text-body-md text-on-surface item-text leading-snug">Heavy cream or coconut cream</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant"><span class="qty-calc" data-base="1">1</span> cup full-fat cream</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[18px]">drag_indicator</span>
+</label>
+<!-- Item 5 -->
+<label class="ingredient-row flex items-center gap-3.5 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer select-none active:scale-[0.99] transition-all">
+<div class="relative flex items-center justify-center w-6 h-6 rounded-md bg-surface-container checkbox-indicator transition-colors">
+<span class="material-symbols-outlined text-white text-[18px] opacity-0 check-icon">check</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-body-md text-body-md text-on-surface item-text leading-snug">Baby spinach leaves</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant"><span class="qty-calc" data-base="2">2</span> cups packed fresh leaves</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[18px]">drag_indicator</span>
+</label>
+<!-- Item 6 -->
+<label class="ingredient-row flex items-center gap-3.5 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer select-none active:scale-[0.99] transition-all">
+<div class="relative flex items-center justify-center w-6 h-6 rounded-md bg-surface-container checkbox-indicator transition-colors">
+<span class="material-symbols-outlined text-white text-[18px] opacity-0 check-icon">check</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-body-md text-body-md text-on-surface item-text leading-snug">Cherry tomatoes</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant"><span class="qty-calc" data-base="1">1</span> cup, halved</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[18px]">drag_indicator</span>
+</label>
+<!-- Item 7 -->
+<label class="ingredient-row flex items-center gap-3.5 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer select-none active:scale-[0.99] transition-all">
+<div class="relative flex items-center justify-center w-6 h-6 rounded-md bg-surface-container checkbox-indicator transition-colors">
+<span class="material-symbols-outlined text-white text-[18px] opacity-0 check-icon">check</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-body-md text-body-md text-on-surface item-text leading-snug">Parmesan cheese</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1/2 cup freshly grated</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[18px]">drag_indicator</span>
+</label>
+<!-- Item 8 -->
+<label class="ingredient-row flex items-center gap-3.5 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer select-none active:scale-[0.99] transition-all">
+<div class="relative flex items-center justify-center w-6 h-6 rounded-md bg-surface-container checkbox-indicator transition-colors">
+<span class="material-symbols-outlined text-white text-[18px] opacity-0 check-icon">check</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-body-md text-body-md text-on-surface item-text leading-snug">Fresh basil, salt & black pepper</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">To taste, freshly cracked</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[18px]">drag_indicator</span>
+</label>
+</div>
+<!-- Quick Add to Grocery List Action -->
+<button class="w-full mt-2 py-3 px-4 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg flex items-center justify-center gap-2 active:scale-[0.99] transition-all">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+<span>Add all ingredients to Grocery List</span>
+</button>
+</div>
+<!-- Tab 2: Instructions View (Hidden initially or toggled) -->
+<div class="hidden flex-col gap-3" id="instructionsSection">
+<!-- Step 1 -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">
+            STEP 1
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 3 min
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+          Season the salmon fillets on both sides with salt and pepper. Heat olive oil and 1 tbsp butter in a large skillet over medium-high heat.
+        </p>
+</div>
+<!-- Step 2 -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">
+            STEP 2
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 10 min
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+          Sear salmon for 5 minutes per side until golden brown and cooked through. Transfer fillets carefully to a warm plate and set aside.
+        </p>
+</div>
+<!-- Step 3 -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">
+            STEP 3
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 3 min
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+          In the same skillet, melt remaining butter and sauté minced garlic for 1 minute until fragrant. Add halved cherry tomatoes and blister lightly.
+        </p>
+</div>
+<!-- Step 4 -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">
+            STEP 4
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 5 min
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+          Pour in heavy cream and bring to a gentle simmer. Stir in baby spinach and grated parmesan until spinach wilts and sauce becomes silky and thick.
+        </p>
+</div>
+<!-- Step 5 -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">
+            STEP 5
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 4 min
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+          Return salmon to the skillet, spoon creamy sauce over fillets, and garnish generously with fresh basil leaves. Serve immediately warm!
+        </p>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Bar -->
+<div class="fixed bottom-0 inset-x-0 z-40 bg-surface/90 backdrop-blur-xl p-4 shadow-[0_-4px_20px_rgba(43,33,24,0.08)]">
+<div class="max-w-md mx-auto flex items-center gap-3">
+<!-- Quick Timer Glance -->
+<div class="flex flex-col items-center justify-center px-3 py-2 rounded-xl bg-surface-container shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">EST TIME</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">25m</span>
+</div>
+<!-- Primary Action CTA -->
+<button class="flex-1 h-12 px-5 rounded-full bg-primary-container text-on-primary-container font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-lg hover:brightness-105 active:scale-[0.98] transition-all" id="startCookingBtn">
+<span class="material-symbols-outlined text-[24px]">soup_kitchen</span>
+<span>Start Cooking</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    // Tab Switching
+    const tabIngredients = document.getElementById('tabIngredients');
+    const tabInstructions = document.getElementById('tabInstructions');
+    const ingredientsSection = document.getElementById('ingredientsSection');
+    const instructionsSection = document.getElementById('instructionsSection');
+
+    function setActiveTab(isIngredients) {
+      if (isIngredients) {
+        tabIngredients.className = "flex-1 py-2.5 rounded-full font-label-lg text-label-lg transition-all duration-200 bg-surface-container-lowest text-on-surface shadow-sm font-semibold flex items-center justify-center gap-1.5";
+        tabInstructions.className = "flex-1 py-2.5 rounded-full font-label-lg text-label-lg transition-all duration-200 text-on-surface-variant font-medium flex items-center justify-center gap-1.5";
+        ingredientsSection.classList.remove('hidden');
+        ingredientsSection.classList.add('flex');
+        instructionsSection.classList.add('hidden');
+        instructionsSection.classList.remove('flex');
+      } else {
+        tabInstructions.className = "flex-1 py-2.5 rounded-full font-label-lg text-label-lg transition-all duration-200 bg-surface-container-lowest text-on-surface shadow-sm font-semibold flex items-center justify-center gap-1.5";
+        tabIngredients.className = "flex-1 py-2.5 rounded-full font-label-lg text-label-lg transition-all duration-200 text-on-surface-variant font-medium flex items-center justify-center gap-1.5";
+        instructionsSection.classList.remove('hidden');
+        instructionsSection.classList.add('flex');
+        ingredientsSection.classList.add('hidden');
+        ingredientsSection.classList.remove('flex');
+      }
+    }
+
+    tabIngredients.addEventListener('click', () => setActiveTab(true));
+    tabInstructions.addEventListener('click', () => setActiveTab(false));
+
+    // Interactive Checkboxes
+    const rows = document.querySelectorAll('.ingredient-row');
+    rows.forEach(row => {
+      row.addEventListener('click', () => {
+        const indicator = row.querySelector('.checkbox-indicator');
+        const icon = row.querySelector('.check-icon');
+        const text = row.querySelector('.item-text');
+
+        const isChecked = indicator.classList.contains('bg-secondary');
+        if (isChecked) {
+          indicator.classList.remove('bg-secondary');
+          indicator.classList.add('bg-surface-container');
+          icon.classList.remove('opacity-100');
+          icon.classList.add('opacity-0');
+          text.classList.remove('line-through', 'text-on-surface-variant/60');
+          text.classList.add('text-on-surface');
+        } else {
+          indicator.classList.remove('bg-surface-container');
+          indicator.classList.add('bg-secondary');
+          icon.classList.remove('opacity-0');
+          icon.classList.add('opacity-100');
+          text.classList.remove('text-on-surface');
+          text.classList.add('line-through', 'text-on-surface-variant/60');
+        }
+      });
+    });
+
+    // Reset Checklist
+    document.getElementById('resetIngredients').addEventListener('click', () => {
+      rows.forEach(row => {
+        const indicator = row.querySelector('.checkbox-indicator');
+        const icon = row.querySelector('.check-icon');
+        const text = row.querySelector('.item-text');
+        indicator.classList.remove('bg-secondary');
+        indicator.classList.add('bg-surface-container');
+        icon.classList.remove('opacity-100');
+        icon.classList.add('opacity-0');
+        text.classList.remove('line-through', 'text-on-surface-variant/60');
+        text.classList.add('text-on-surface');
+      });
+    });
+
+    // Servings Stepper & Dynamic Quantities
+    let currentServings = 3;
+    const baseServings = 3;
+    const servingsDisplay = document.getElementById('servingsDisplay');
+    const qtyElements = document.querySelectorAll('.qty-calc');
+
+    function updateServings(newVal) {
+      if (newVal < 1) return;
+      currentServings = newVal;
+      servingsDisplay.textContent = `${currentServings} ${currentServings === 1 ? 'serving' : 'servings'}`;
+
+      const ratio = currentServings / baseServings;
+      qtyElements.forEach(el => {
+        const base = parseFloat(el.getAttribute('data-base'));
+        const calculated = Math.round(base * ratio * 10) / 10;
+        el.textContent = calculated;
+      });
+    }
+
+    document.getElementById('servingsDec').addEventListener('click', () => updateServings(currentServings - 1));
+    document.getElementById('servingsInc').addEventListener('click', () => updateServings(currentServings + 1));
+
+    // Favorite Toggle
+    let isFav = true;
+    const favoriteBtn = document.getElementById('favoriteBtn');
+    const favIcon = document.getElementById('favIcon');
+    favoriteBtn.addEventListener('click', () => {
+      isFav = !isFav;
+      if (isFav) {
+        favIcon.style.fontVariationSettings = "'FILL' 1";
+        favIcon.classList.add('text-primary');
+        favIcon.classList.remove('text-on-surface-variant');
+      } else {
+        favIcon.style.fontVariationSettings = "'FILL' 0";
+        favIcon.classList.remove('text-primary');
+        favIcon.classList.add('text-on-surface-variant');
+      }
+    });
+
+    // Share Feedback
+    document.getElementById('shareBtn').addEventListener('click', () => {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Creamy Tuscan Garlic Butter Salmon',
+          text: 'Check out this delicious recipe on Tasty!',
+          url: window.location.href,
+        }).catch(() => {});
+      } else {
+        alert('Recipe link copied to clipboard!');
+      }
+    });
+
+    // Start Cooking
+    document.getElementById('startCookingBtn').addEventListener('click', () => {
+      setActiveTab(false);
+      window.scrollTo({ top: 380, behavior: 'smooth' });
+    });
+  })();
+</script></main></body></html>

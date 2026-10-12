@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-fixed": "#d4e3ff", "error": "#ba1a1a", "primary-fixed-dim": "#ffb598", "surface-variant": "#f2dfd1", "on-tertiary-container": "#fdfcff", "on-primary-fixed": "#370e00", "tertiary": "#005da8", "on-tertiary": "#ffffff", "on-secondary-container": "#347044", "tertiary-container": "#0076d2", "secondary-container": "#b1f2ba", "primary-fixed": "#ffdbce", "outline-variant": "#e2bfb2", "surface-container-highest": "#f2dfd1", "tertiary-fixed-dim": "#a4c9ff", "on-secondary-fixed-variant": "#125128", "on-secondary": "#ffffff", "on-tertiary-fixed": "#001c39", "background": "#fff8f5", "surface-container-lowest": "#ffffff", "secondary": "#2e6a3e", "on-error-container": "#93000a", "error-container": "#ffdad6", "primary-container": "#cb4a00", "on-primary-container": "#fffbff", "on-error": "#ffffff", "inverse-surface": "#392e25", "surface-dim": "#e9d7c8", "primary": "#a23a00", "surface-container-low": "#fff1e8", "on-secondary-fixed": "#00210b", "surface-container": "#feeadc", "on-tertiary-fixed-variant": "#004883", "surface-container-high": "#f8e5d6", "outline": "#8e7166", "on-background": "#231a11", "on-primary": "#ffffff", "inverse-on-surface": "#ffeee1", "on-primary-fixed-variant": "#7f2b00", "secondary-fixed": "#b1f2ba", "surface": "#fff8f5", "inverse-primary": "#ffb598", "secondary-fixed-dim": "#96d5a0", "surface-tint": "#a63b00", "on-surface-variant": "#5a4138", "on-surface": "#231a11", "surface-bright": "#fff8f5" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-xs": "0.25rem", "margin": "1rem", "gutter-tablet": "1.5rem", "space-sm": "0.5rem", "gutter": "1rem", "space-xl": "2rem", "space-md": "1rem", "margin-tablet": "2rem", "margin-desktop": "3rem", "gutter-desktop": "2rem" }, "fontFamily": { "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "title-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "label-md": ["Inter"], "label-lg": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Inter"], "display-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"] }, "fontSize": { "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-sm": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(43,33,24,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Tasty Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UrMSTlmdgiXGqREHEH9tkbsl0V_N8x467Tl2grTihpa5e5VaKAPxEm89S7V8wZttcX5R7elFFpWfeZirZAAXuQ3T23P6_tucAB3Z4jXwpMY-wAJVcH_NoJvs4Cdk50HJABgmolJ8eb6ejHoBMmLW3X1YetzXTUkFKiLiweoQ2UVx-ZtRxvpmj3ZGznbgbX3EF22wt_r4QLBJtLVqcQiPiK80LDo0jPu7GUXGZeLhb5Tl8GN7Azd8VufJoJ"/><span class="font-title-md text-title-md text-on-surface tracking-tight">Tasty</span><span class="text-outline-variant font-body-sm text-body-sm">•</span><span class="font-label-lg text-label-lg text-on-surface-variant truncate max-w-[120px]">Recipes</span></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[24px]">notifications</span></button><a class="w-11 h-11 flex items-center justify-center rounded-full" data-path="settings" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT1F1PWVsQ1Zn7m4qYD67OqF0JwovlA4DuAJ20zurqDBWsNyUg6tXjia-Mdz4qB4yC7VO6IxkmpHtpQWqz3g9X839Pow8V74_xH9Z9_gYtm2DyuyxGSKtN4tppSuvRuIjWpnqh09CJ7M_T5-QzUbLUJocZs6jUgCHr1wAyQJ05lJa8hLuVIB6Lv-g614z8P0grMYkRfVbQjY7QjpVhtHBQVrTA2GeQCtZ7AV3TPczLkFlZ3BIT2Iiowg"/></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-background"><div class="flex flex-col w-full pb-8">
+<!-- Search & Filter Bar -->
+<section class="px-margin pt-space-xs pb-space-sm">
+<div class="relative flex items-center bg-surface-container-lowest rounded-xl shadow-[0_2px_12px_rgba(43,33,24,0.06)] h-[52px] px-space-md gap-space-sm transition-all focus-within:shadow-[0_4px_16px_rgba(162,58,0,0.12)]">
+<span class="material-symbols-outlined text-primary text-[22px] select-none">search</span>
+<input aria-label="Search recipes and ingredients" class="flex-1 bg-transparent border-0 outline-none font-body-md text-body-md text-on-surface placeholder:text-outline text-ellipsis" placeholder="Search recipes, ingredients, chef..." type="search"/>
+<button aria-label="Filter recipe preferences" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container hover:bg-surface-container-high active:scale-95 text-on-surface-variant transition-transform" id="filter-trigger" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</section>
+<!-- Horizontal Cuisine Filter Chips -->
+<section class="w-full py-space-xs overflow-hidden">
+<div class="flex gap-space-sm px-margin overflow-x-auto no-scrollbar scroll-smooth" id="category-scroll" style="-webkit-overflow-scrolling: touch; scrollbar-width: none;">
+<button class="category-chip shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-primary text-on-primary shadow-sm transition-all" data-active="true" type="button">
+        All
+      </button>
+<button class="category-chip shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant shadow-sm hover:bg-surface-container transition-all" data-active="false" type="button">
+        Italian 🍝
+      </button>
+<button class="category-chip shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant shadow-sm hover:bg-surface-container transition-all" data-active="false" type="button">
+        Healthy & Green 🥗
+      </button>
+<button class="category-chip shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant shadow-sm hover:bg-surface-container transition-all" data-active="false" type="button">
+        Breakfast 🥞
+      </button>
+<button class="category-chip shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant shadow-sm hover:bg-surface-container transition-all" data-active="false" type="button">
+        Asian 🍜
+      </button>
+<button class="category-chip shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant shadow-sm hover:bg-surface-container transition-all" data-active="false" type="button">
+        Quick & Easy ⏱️
+      </button>
+<button class="category-chip shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant shadow-sm hover:bg-surface-container transition-all" data-active="false" type="button">
+        Desserts 🍰
+      </button>
+<button class="category-chip shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant shadow-sm hover:bg-surface-container transition-all" data-active="false" type="button">
+        Baking 🥖
+      </button>
+</div>
+</section>
+<!-- Featured Spotlight Hero Card -->
+<section class="px-margin pt-space-md pb-space-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Today's Featured</h2>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Chef Pick</span>
+</div>
+<div class="relative w-full rounded-2xl bg-surface-container-lowest shadow-[0_4px_20px_rgba(43,33,24,0.08)] overflow-hidden group">
+<!-- Recipe Media Canvas -->
+<div class="relative w-full aspect-[16/10] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Gourmet pan-seared salmon fillet nestled in luscious creamy tuscan garlic sun-dried tomato sauce with wilted fresh baby spinach leaves, placed on warm artisanal ceramic plate, dramatic warm afternoon sunlight, food styling photography, studio depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlZhJxBlU8O0Zdl5NTlio-5soLFflshxinvq7pwnTHrqlZRnAKGUkTjrt6FmZB-PXsqany1LFs-DtQ9eCTfddv8JD-gzE2S5zgOKoeLpHh5RrM6_WbX3S0x9wWK7sp7SF8nUYnKrbJwWVFQml3pFTKAWVgoNldaJwvdcH12oxoS5eHMDVDfQRdf0KmkzC8l06VBeQ4mwfdyjEB7eWpNKxNQyUxMusyM-d8hlciSpV_1grNWaSNqUULLw"/>
+<!-- Soft Gradient scrim for crisp overlay contrast -->
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-black/20 pointer-events-none"></div>
+<!-- Floating Bookmark Interaction -->
+<button aria-label="Save Tuscan Salmon to favorites" class="bookmark-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-surface-container-lowest/90 backdrop-blur-md flex items-center justify-center text-on-surface shadow-md active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+<!-- Image Floating Badges -->
+<div class="absolute bottom-3 left-3 flex flex-wrap items-center gap-space-xs">
+<span class="px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">cloud_download</span>
+            Easy
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/95 backdrop-blur-md text-on-surface font-label-sm text-label-sm flex items-center gap-1 shadow-sm font-semibold">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+            4.9 <span class="text-on-surface-variant font-normal">(1.2k)</span>
+</span>
+</div>
+</div>
+<!-- Card Information Details -->
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Trending Recipe</span>
+<span class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+            25 mins
+          </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface leading-snug">Creamy Tuscan Garlic Butter Salmon</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Pan-seared tender salmon submerged in velvety sun-dried tomato garlic sauce with fresh wilted spinach.</p>
+<div class="flex items-center justify-between pt-space-xs mt-1">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Seafood</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Keto Friendly</span>
+</div>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-semibold flex items-center gap-1 hover:bg-primary hover:text-on-primary transition-colors" type="button">
+            Cook Now
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Popular & Everyday Recipes Header -->
+<section class="px-margin pt-space-md pb-space-xs flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Popular Recipes</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Handcrafted meals tested by home chefs</p>
+</div>
+<button class="font-label-md text-label-md text-primary font-semibold flex items-center gap-0.5" type="button">
+      See all
+      <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</section>
+<!-- Recipe Cards Stack -->
+<section class="px-margin flex flex-col gap-space-md pt-space-xs">
+<!-- Card 1: Wild Mushroom Risotto -->
+<article class="relative w-full rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_2px_12px_rgba(43,33,24,0.06)] flex gap-space-md items-center">
+<div class="relative w-28 h-28 rounded-xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Creamy artisan wild mushroom risotto garnished with freshly shaved parmesan reggiano flakes, cracked black pepper and fresh green thyme sprigs, served in a rustic stoneware ceramic bowl, natural side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo5zLnfgQpCJE4Vnf1bpArrLDp7ZajpIW5g6Z7oVcbQpA2Wve2ktjfX4MTj7TlEnAhvVxjUR171J1jx5udLXOxyzHxGWxO2PUcFUaECuxQVdAe4XQXqZe47jaCrplU5_bfnlvpSk6VzLEHhsxYrpt7_MdkO_XBKYIlhZndC750WW0Fjjeuy9yBIHzvk9o7RokP2frzYTGnabY-nz1Sns56AW4ejGoA6fhKzuRA7PU-phfUL9RF3V_4rQ"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded-md bg-secondary text-on-secondary font-label-sm text-label-sm scale-90 origin-top-left">
+          #Vegetarian
+        </span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between h-full">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-title-md text-title-md text-on-surface leading-tight truncate">Artisan Wild Mushroom Risotto</h3>
+<button aria-label="Add Wild Mushroom Risotto to favorites" class="favorite-toggle shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="flex items-center gap-0.5 font-label-sm text-label-sm text-on-surface font-semibold">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+            4.8
+          </span>
+<span class="text-outline-variant font-label-sm">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[15px] text-outline">schedule</span>
+            35 mins
+          </span>
+</div>
+<div class="flex items-center gap-space-xs mt-2.5">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+            Medium
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">group</span>
+            4 Servings
+          </span>
+</div>
+</div>
+</article>
+<!-- Card 2: Spicy Honey Glazed Chicken Bowl -->
+<article class="relative w-full rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_2px_12px_rgba(43,33,24,0.06)] flex gap-space-md items-center">
+<div class="relative w-28 h-28 rounded-xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Vibrant meal bowl containing glistening spicy honey glazed chicken pieces, steamed jasmine rice, sliced creamy avocado, edamame beans and toasted sesame seeds, soft warm food studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyEO-t5K8jqtV85dArxGpjRKAM12e2GwFi21cbg693WPXg8nIXcxDwogIJTLmJHC2KiNMrkqfeBUGEky9ecwtbN7iqtidkdmw4qBDz2jKoWT71Wpxsvf_4pqbW3M-JAbNSEkKNwTNRvZi2qdSvu2AZTpiYr0vUXvc8MM8m7WZUztoDd5MNQkZb8EMKUAMRoym_iU_C4HwYPEY8bDXXBEl8MDsDMsk_NKakJx76ChM8PCculTqQ1Q-H9w"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded-md bg-primary-container text-on-primary-container font-label-sm text-label-sm scale-90 origin-top-left">
+          #HighProtein
+        </span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between h-full">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-title-md text-title-md text-on-surface leading-tight truncate">Spicy Honey Glazed Chicken Bowl</h3>
+<button aria-label="Remove Spicy Honey Glazed Chicken from favorites" class="favorite-toggle shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="flex items-center gap-0.5 font-label-sm text-label-sm text-on-surface font-semibold">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+            4.9
+          </span>
+<span class="text-outline-variant font-label-sm">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[15px] text-outline">schedule</span>
+            20 mins
+          </span>
+</div>
+<div class="flex items-center gap-space-xs mt-2.5">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+            Easy
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">group</span>
+            2 Servings
+          </span>
+</div>
+</div>
+</article>
+<!-- Card 3: Traditional Margherita Sourdough Pizza -->
+<article class="relative w-full rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_2px_12px_rgba(43,33,24,0.06)] flex gap-space-md items-center">
+<div class="relative w-28 h-28 rounded-xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Rustic Neapolitan wood-fired margherita pizza with bubbly blistered sourdough crust, melted fresh fior di latte mozzarella cheese, rich san marzano tomato sauce, fresh fragrant green basil leaves on rustic peel board" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxbMTbg_mfoFWrHi4OdSOKRUl3213vm6EgKitdY_XfwIVRvFxGTLXyoqFkrPckk6vOclnpl5vcX0zhpkr571LVXxQdsyOcpbgYhcOb4nKqCPLWz_cPWcSKVUOZejtX5SNqKtRtGNe5FWIr9DjWRM-oq1oxoqU1z0Rt4IRNU64xDPDXZiihC3STE321R7UHU7LuHrBkuCg0rOuqdKYunn8PeeTJVmB1shDHawWGHhocJ7iR2VIT5SuATQ"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded-md bg-secondary text-on-secondary font-label-sm text-label-sm scale-90 origin-top-left">
+          #Italian
+        </span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between h-full">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-title-md text-title-md text-on-surface leading-tight truncate">Margherita Sourdough Pizza</h3>
+<button aria-label="Add Margherita Pizza to favorites" class="favorite-toggle shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="flex items-center gap-0.5 font-label-sm text-label-sm text-on-surface font-semibold">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+            4.7
+          </span>
+<span class="text-outline-variant font-label-sm">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[15px] text-outline">schedule</span>
+            45 mins
+          </span>
+</div>
+<div class="flex items-center gap-space-xs mt-2.5">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+            Hard
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">group</span>
+            4 Servings
+          </span>
+</div>
+</div>
+</article>
+<!-- Card 4: Avocado & Poached Egg Brioche -->
+<article class="relative w-full rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_2px_12px_rgba(43,33,24,0.06)] flex gap-space-md items-center">
+<div class="relative w-28 h-28 rounded-xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Golden toasted brioche toast topped with creamy smashed avocado, perfectly poached farm egg with runny golden yolk slowly spilling over, microgreens and pinch of red chili flakes on minimalist ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvM33Fydb9jcAUQ7FOvS3Khqm-JcD5iDl2guk68m6bipjGyUecUMKzdqHZS7HL70G1bnmni35CFmCaUBfajaGOpYiJTvBhWuvrJ6IMmI4rnioPEg7HfClLnHhkfxdCoplOOQF6JoRjS6ccNV-BcnlMIJUU4TF3JfILR8N6P5iWaQpzieumLOtWlrNSl1zN6lywQvju7LX_QRS2Z95NUrXPAqT7lRQ8WqjQLUAmcPEjDIocuiqB_Vsn1w"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded-md bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm scale-90 origin-top-left">
+          #Breakfast
+        </span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between h-full">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-title-md text-title-md text-on-surface leading-tight truncate">Avocado & Poached Egg Brioche</h3>
+<button aria-label="Add Avocado Brioche to favorites" class="favorite-toggle shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="flex items-center gap-0.5 font-label-sm text-label-sm text-on-surface font-semibold">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+            4.9
+          </span>
+<span class="text-outline-variant font-label-sm">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[15px] text-outline">schedule</span>
+            15 mins
+          </span>
+</div>
+<div class="flex items-center gap-space-xs mt-2.5">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+            Easy
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">group</span>
+            1 Serving
+          </span>
+</div>
+</div>
+</article>
+</section>
+<!-- Interactive Script for micro-delights (chip selection & heart toggles) -->
+<script>
+    // Chip Active State Toggle
+    const chips = document.querySelectorAll('.category-chip');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => {
+          c.classList.remove('bg-primary', 'text-on-primary');
+          c.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+          c.setAttribute('data-active', 'false');
+        });
+        chip.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+        chip.classList.add('bg-primary', 'text-on-primary');
+        chip.setAttribute('data-active', 'true');
+      });
+    });
+
+    // Favorite Button Toggling
+    const favButtons = document.querySelectorAll('.favorite-toggle');
+    favButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const icon = btn.querySelector('.material-symbols-outlined');
+        const isFilled = icon.style.fontVariationSettings?.includes("'FILL' 1");
+        
+        if (isFilled) {
+          icon.style.fontVariationSettings = "'FILL' 0";
+          btn.classList.remove('text-primary');
+          btn.classList.add('text-outline');
+        } else {
+          icon.style.fontVariationSettings = "'FILL' 1";
+          btn.classList.remove('text-outline');
+          btn.classList.add('text-primary');
+          // subtle pop animation
+          btn.animate([
+            { transform: 'scale(0.8)' },
+            { transform: 'scale(1.2)' },
+            { transform: 'scale(1.0)' }
+          ], { duration: 250, easing: 'ease-out' });
+        }
+      });
+    });
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(43,33,24,0.06)]" data-active-classes="text-primary font-label-md"><div class="flex items-center justify-around h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] transition-colors text-primary font-label-md" data-path="recipes" href="#"><span class="material-symbols-outlined text-[24px]">restaurant_menu</span><span class="font-label-sm text-label-sm">Recipes</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="saved" href="#"><span class="material-symbols-outlined text-[24px]">bookmark</span><span class="font-label-sm text-label-sm">Saved</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="meal-plan" href="#"><span class="material-symbols-outlined text-[24px]">calendar_today</span><span class="font-label-sm text-label-sm">Meal Plan</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[24px]">settings</span><span class="font-label-sm text-label-sm">Settings</span></a></div></nav></body></html>
