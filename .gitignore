@@ -1,0 +1,55 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Kotlin Multiplatform / Compose
+.kotlin/
+kotlin-js-store/
+composeApp/build/
+
+# Android / SDK
+local.properties
+*.apk
+*.aab
+*.ap_
+*.dex
+captures/
+.externalNativeBuild/
+.cxx/
+
+# IntelliJ IDEA / Android Studio
+*.iml
+.idea/
+.DS_Store
+*.ipr
+*.iws
+out/
+
+# iOS / Xcode
+iosApp/Pods/
+iosApp/build/
+iosApp/*.xcworkspace
+iosApp/iosApp.xcodeproj/project.xcworkspace/
+iosApp/iosApp.xcodeproj/xcuserdata/
+DerivedData/
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.xcscmblueprint
+
+# OS / Misc
+Thumbs.db
+*.log
+*~
+*.swp
